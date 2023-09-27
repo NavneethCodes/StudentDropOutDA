@@ -145,26 +145,24 @@
         .yes-no-button {
             width: 100px;
             height: 40px;
-            background-color: #333;
-            color: #fff;
+            background-color: #fff; /* Set the background color to white */
+            color: #333; /* Set the text color to black */
             border: none;
             border-radius: 5px;
             margin-bottom: 10px;
             cursor: pointer;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .yes-no-button:hover {
-            background-color: #66c2ff;
-            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
             transform: scale(1.05);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
         }
 
         .yes-no-button:active {
-            background-color: #333;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
             transform: scale(0.95);
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .content {
@@ -257,9 +255,10 @@
             text-align: center;
             padding: 10px;
         }
-        .number{
+
+        .number {
             font-size: 70px;
-            color:red;
+            color: red;
             justify-content: center;
             padding-left: 400px;
         }
@@ -281,7 +280,7 @@
         <!-- Left-side menu -->
         <div class="side-menu">
             <p>ARE YOU A SCHOOL DROPPER?</p>
-            <button class="yes-no-button"><a href="file:///C:/Users/user/Desktop/hackathon/questions.html">YES</a></button>
+            <button class="yes-no-button yes-button"><a href="file:///C:/Users/user/Desktop/hackathon/questions.html">YES</a></button>
             <button class="yes-no-button">NO</button>
         </div>
         <!-- Main content area -->
