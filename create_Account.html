@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Create an Account</title>
+    <link rel="stylesheet" type="text/css" href="signupStyles.css">
+</head>
+<body>
+    <div class="signup-container">
+        <img src="login.png" alt="LOGIN LOGO">
+        <h1>Create an Account</h1>
+        <form action="main.html" method="POST">
+            <div class="input-line">
+                <input type="text" id="username" name="username" placeholder="Username" required>
+            </div>
+            <div class="input-line">
+                <input type="email" id="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="input-line">
+                <input type="password" id="password" name="password" placeholder="Password" required>
+            </div>
+            <div class="input-line">
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required>
+            </div>
+            <button type="submit">Sign Up</button>
+        </form>
+        <a href="login_Page.html" class="login-link">Already have an account? Login</a>
+    </div>
+</body>
+</html>
