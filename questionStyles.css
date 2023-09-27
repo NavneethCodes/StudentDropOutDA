@@ -1,0 +1,62 @@
+/* questionStyles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Background color for the entire page */
+}
+
+.container {
+    background-color: #fff; /* Background color for the container */
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+}
+
+.heading {
+    text-align: center;
+    color: #333;
+}
+
+.question {
+    margin-bottom: 20px;
+    text-align: left; /* Align questions to the left */
+}
+
+.question-text {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.options label {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block; /* Display options vertically below the question */
+}
+
+.textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+.btn {
+    background-color: #007acc;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #005ea3;
+}

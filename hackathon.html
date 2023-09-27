@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- Add Font Awesome CSS -->
+    <style>
+        /* Add your CSS styles here */
+        h2 {
+            color: rgb(0, 0, 0);
+            font-size: 70px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .circle-button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .circle-button {
+            width: 300px;
+            height: 300px;
+            background-color: red;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .circle-button:hover {
+            background-color: #ff3333;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
+        }
+
+        .circle-button:active {
+            background-color: #cc0000;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            transform: scale(0.95);
+        }
+
+        .circle-button-number {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        body {
+            font-family: 'metropolis';
+            margin: 0;
+            padding: 0;
+            position: relative;
+            background-color: #E9E6E1; /* Background color for the entire webpage */
+        }
+
+        header {
+            background-color: #646f76;
+            color: #fff;
+            text-align: left;
+            padding: 20px;
+            height: 120px;
+        }
+
+        header h1 {
+            font-family: 'metropolis';
+            font-size: 36px; /* Adjust the font size as needed */
+            margin-bottom: 10px;
+            padding-top: 20px;
+        }
+
+        nav {
+            background-color: #171515;
+            color: #fff;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-between; /* Use space-between to distribute the items equally */
+        }
+
+        nav li {
+            color: rgb(0, 0, 0);
+            flex-grow: 1; /* Allow the items to grow and occupy equal space */
+            text-align: center; /* Center-align the text */
+            margin: 0; /* Remove margin to prevent extra spacing */
+            height: 50px;
+            padding-top: 20px;
+            padding-left: 60px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 20px; /* Add padding for spacing */
+            display: flex;
+            align-items: center; /* Center the text and icon vertically */
+            transition: color 0.3s; /* Smooth color transition */
+        }
+
+        nav a i {
+            margin-right: 10px; /* Add spacing between icon and text */
+        }
+
+        nav a:hover {
+            color: #66c2ff;
+        }
+
+        .layout-container {
+            display: flex;
+        }
+
+        /* Style for the left-side menu */
+        .side-menu {
+            width: 200px;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center-align the content vertically */
+        }
+
+        .side-menu p {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .yes-no-button {
+            width: 100px;
+            height: 40px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+
+        .yes-no-button:hover {
+            background-color: #66c2ff;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
+        }
+
+        .yes-no-button:active {
+            background-color: #333;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            transform: scale(0.95);
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            position: relative; /* Add this to position the buttons correctly */
+        }
+
+        .sliding-box-container {
+            width: 100%;
+            position: relative;
+            overflow: hidden; /* Hide overflowing content */
+        }
+
+        .sliding-box-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .sliding-box {
+            width: 100%;
+            height: 600px;
+            background-color: #4d7692;
+            flex: 0 0 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .slide-left {
+            transform: translateX(0); /* Slide the images to the left */
+        }
+
+        .slide-center {
+            transform: translateX(-100%); /* Slide the images to the left */
+        }
+
+        .slide-right {
+            transform: translateX(-200%); /* Slide the images to the left */
+        }
+
+        /* Style for the sliding buttons */
+        .slider-button-right,
+        .slider-button-left {
+            background-color: rgba(128, 128, 128, 0.3); /* Gray color with 30% opacity */
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 24px; /* Adjust font size */
+        }
+
+        .slider-button-right {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+        }
+
+        .slider-button-left {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+        }
+
+        .slider-button-right:before {
+            content: '\2192'; /* Right arrow character */
+            margin-right: 5px;
+        }
+
+        .slider-button-left:before {
+            content: '\2190'; /* Left arrow character */
+            margin-right: 5px;
+        }
+
+        .slider-button-right:hover,
+        .slider-button-left:hover {
+            background-color: rgba(128, 128, 128, 0.5); /* Gray color with 50% opacity on hover */
+        }
+
+        footer {
+            background-color: #000000;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+        .number{
+            font-size: 70px;
+            color:red;
+            justify-content: center;
+            padding-left: 400px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DROPOUTDIVE.COM</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#"><i class="fas fa-home"></i> HOME</a></li>
+            <li><a href="file:///C:/Users/user/Desktop/hackathon/login_Page.html"><i class="fas fa-sign-in-alt"></i> LOGIN</a></li>
+            <li><a href="file:///C:/Users/user/Desktop/hackathon/index.html"><i class="fas fa-chart-bar"></i> ANALYTICS</a></li>
+            <li><a href="#"><i class="fas fa-envelope"></i> CONTACT</a></li>
+        </ul>
+    </nav>
+    <div class="layout-container">
+        <!-- Left-side menu -->
+        <div class="side-menu">
+            <p>ARE YOU A SCHOOL DROPPER?</p>
+            <button class="yes-no-button"><a href="file:///C:/Users/user/Desktop/hackathon/questions.html">YES</a></button>
+            <button class="yes-no-button">NO</button>
+        </div>
+        <!-- Main content area -->
+        <div class="content">
+            <div class="sliding-box-container">
+                <!-- Sliding Boxes -->
+                <div class="sliding-box-wrapper">
+                    <div class="sliding-box">
+                        <img src="C:\Users\user\Desktop\hackathon\Untitled.png" alt="Image 1">
+                    </div>
+                    <div class="sliding-box">
+                        <img src="" alt="Image 2">
+                    </div>
+                    <div class="sliding-box">
+                        <img src="" alt="Image 3">
+                    </div>
+                </div>
+                <!-- Sliding Buttons -->
+                <button class="slider-button-right" onclick="slideRight()"></button>
+                <button class="slider-button-left" onclick="slideLeft()"></button>
+            </div>
+            <section class="reports-section">
+                <h2>NUMBER OF DROPOUTS TILL DATE</h2>
+                <h3 class="number">3,00,000</h3>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        const slidingBoxWrapper = document.querySelector('.sliding-box-wrapper');
+        const slidingBoxes = document.querySelectorAll('.sliding-box');
+        const totalSlides = slidingBoxes.length;
+        let currentSlide = 0;
+
+        function slideRight() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        }
+
+        function slideLeft() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        }
+
+        function updateSlider() {
+            const transformValue = `translateX(-${currentSlide * 100}%)`;
+            slidingBoxWrapper.style.transform = transformValue;
+        }
+    </script>
+
+    <footer>
+        <p>&copy;THE TROJAN HORSES </p>
+    </footer>
+</body>
+</html>

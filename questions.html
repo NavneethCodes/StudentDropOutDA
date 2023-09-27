@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Questionnaire</title>
+    <link rel="stylesheet" type="text/css" href="questionStyles.css">
+</head>
+<body>
+    <!-- Questionnaire container -->
+    <div id="questionnaireContainer" class="container">
+        <h1 class="heading">Survey</h1>
+        <form id="questionnaireForm">
+            <!-- Question 1 -->
+            <div class="question">
+                <div class="question-text">1. Choose the phase of dropout</div>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="Pre-Primary"> Pre-Primary</label>
+                    <label><input type="radio" name="q1" value="Primary"> Primary</label>
+                    <label><input type="radio" name="q1" value="Middle School"> Middle School</label>
+                    <label><input type="radio" name="q1" value="High School"> High School</label>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <div class="question-text">2. What is your gender?</div>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="Male"> Male</label>
+                    <label><input type="radio" name="q2" value="Female"> Female</label>
+                    <label><input type="radio" name="q2" value="Other"> Other</label>
+                    <label><input type="radio" name="q2" value="Rather not Specify"> Rather not Specify</label>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <div class="question-text">3. Reason for dropout:-</div>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="Financial"> Financial</label>
+                    <label><input type="radio" name="q3" value="Physical/Mental Disability"> Physical/Mental Disability</label>
+                    <label><input type="radio" name="q3" value="Mode of transportation"> Mode of transportation</label>
+                    <label><input type="radio" name="q3" value="Other"> Other</label>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <div class="question-text">4. Did you drop out due to caste issues?</div>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="Yes">Yes</label>
+                    <label><input type="radio" name="q4" value="No"> No</label>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <div class="question-text">5. Was any of the below was the reason for dropout?</div>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="Bullying"> Bullying</label>
+                    <label><input type="radio" name="q5" value="Mental Pressure"> Mental Pressure</label>
+                    <label><input type="radio" name="q5" value="Decrimination"> Decrimination</label>
+                    <label><input type="radio" name="q5" value="Health Issue"> Health Issue</label>
+                </div>
+            </div>
+
+            <!-- Additional details -->
+            <div class="additional-details">Do you want to add any more details, if yes, please specify:</div>
+            <textarea id="additionalDetails" name="additionalDetails" rows="4" cols="50" class="textarea"></textarea>
+
+            <!-- Submit button -->
+            <input type="submit" value="Submit" class="btn">
+        </form>
+    </div>
+</body>
+</html>
